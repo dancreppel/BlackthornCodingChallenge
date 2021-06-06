@@ -1,0 +1,19 @@
+CREATE TABLE carts(
+  id SERIAL PRIMARY KEY,
+  subtotal NUMERIC(10, 2) DEFAULT 0.00,
+  discount NUMERIC(4, 2) DEFAULT 0.00,
+  tax NUMERIC(4, 2) NOT NULL,
+  total NUMERIC(10, 2) DEFAULT 0.00 
+);
+
+CREATE TABLE items(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(30),
+  price NUMERIC(4, 2) DEFAULT 0.00
+);
+
+CREATE TABLE cart_items(
+  id SERIAL PRIMARY KEY,
+  cart_id integer REFERENCES carts(id),
+  item_id integer REFERENCES items(id)
+);
