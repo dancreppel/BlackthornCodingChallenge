@@ -9,7 +9,7 @@ CREATE TABLE carts(
 CREATE TABLE items(
   id SERIAL PRIMARY KEY,
   name VARCHAR(30),
-  price NUMERIC(4, 2) DEFAULT 0.00
+  price NUMERIC(10, 2) DEFAULT 0.00
 );
 
 CREATE TABLE cart_items(
