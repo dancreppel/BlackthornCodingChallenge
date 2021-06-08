@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 3000;
 const carts = require('./endpoints/cart_routes');
 const items = require('./endpoints/item_routes');
 
+app.get('/', (req, res) => res.send("Greetings!"));
+
 app.use('/carts', carts);
 app.use('/items', items);
 
